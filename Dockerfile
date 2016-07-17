@@ -20,6 +20,7 @@ RUN su ubuntu -c "sed -i -e 's_127.0.0.1_0.0.0.0_g' /home/ubuntu/cloud9/configs/
 RUN su ubuntu -c "C9_DIR=$HOME/.c9"
 RUN su ubuntu -c 'PATH="$C9_DIR/node/bin/:$C9_DIR/node_modules/.bin:$PATH"'
 RUN su ubuntu -c "cd $C9_DIR"
+RUN su ubuntu -c "nvm install node"
 RUN su ubuntu -c "npm install pty.js"
 
 # Clean up APT when done.

@@ -12,7 +12,7 @@ RUN apt-get install -y build-essential g++ curl libssl-dev apache2-utils git lib
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN apt-get install -y nodejs
 
-# Install Cloud9 as ubuntu user
+# Install Cloud9
 RUN git clone https://github.com/c9/core.git /cloud9
 WORKDIR /cloud9
 RUN scripts/install-sdk.sh

@@ -6,7 +6,7 @@ MAINTAINER j7an <github.com/j7an/cloud9-workspace>
 
 # Install base
 RUN apt-get update
-RUN apt-get install -y build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs python2.7 python2.7-dev
+RUN apt-get install -y build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs
 
 # Install latest v6 Node.js
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -34,3 +34,5 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 # Expose ports.
 EXPOSE 80
 EXPOSE 3000
+
+CMD [ "node", "/home/ubuntu/cloud9/server.js", "--listen", "0.0.0.0", "--port", "80", "-w", "/home/ubuntu" ]

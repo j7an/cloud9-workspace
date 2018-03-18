@@ -9,8 +9,8 @@ RUN apt-get update
 RUN apt-get install -y build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs python2.7 python2.7-dev
 
 # Install latest v6 Node.js
-#RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-#RUN apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+RUN apt-get install -y nodejs
 
 # Install Cloud9 as ubuntu user
 USER ubuntu
